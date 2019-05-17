@@ -1,0 +1,5 @@
+apply from:"../common_build.gradle"
+
+dependencies {
+    api project(path: ':CommonSDK')
+}
