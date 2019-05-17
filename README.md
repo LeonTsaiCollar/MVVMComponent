@@ -1,0 +1,2 @@
+# MVVMComponent
+一个适用于商业项目的基于MVVM架构的组件化框架
