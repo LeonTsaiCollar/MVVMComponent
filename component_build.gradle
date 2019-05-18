@@ -3,9 +3,9 @@ if (isBuildModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -67,9 +67,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.dependencies["kotlin-stdlib-jdk7"]
+//    implementation rootProject.ext.dependencies["kotlin-stdlib-jdk7"]
     implementation rootProject.ext.dependencies["appcompat"]
-    implementation rootProject.ext.dependencies["core-ktx"]
+//    implementation rootProject.ext.dependencies["core-ktx"]
     implementation rootProject.ext.dependencies["constraintlayout"]
     testImplementation rootProject.ext.dependencies["junit"]
     androidTestImplementation rootProject.ext.dependencies["runner"]

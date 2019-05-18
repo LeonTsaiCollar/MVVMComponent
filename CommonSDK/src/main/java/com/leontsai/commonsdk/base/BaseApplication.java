@@ -7,6 +7,7 @@ import androidx.multidex.MultiDexApplication;
 
 import com.leontsai.commonsdk.base.delegate.AppDelegate;
 import com.leontsai.commonsdk.base.delegate.AppLifecycle;
+import com.leontsai.commonsdk.di.component.AppComponent;
 import com.leontsai.commonsdk.utils.Preconditions;
 
 
@@ -43,4 +44,11 @@ public class BaseApplication extends MultiDexApplication implements IApp {
     }
 
 
+    @NonNull
+    @Override
+    public AppComponent getAppComponent() {
+        Preconditions.checkNotNull(mAppDelegate, "%s cannot be null", AppDelegate.class.getName());
+        Preconditions.checkState(mAppDelegate instanceof IApp, "%s must be implements %s", mAppDelegate.getClass().getName(), IApp.class.getName());
+        return ((IApp) mAppDelegate).getAppComponent();
+    }
 }

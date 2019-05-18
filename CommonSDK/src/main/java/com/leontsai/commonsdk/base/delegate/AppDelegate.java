@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import com.leontsai.commonsdk.base.IApp;
 import com.leontsai.commonsdk.base.integration.ConfigModule;
 import com.leontsai.commonsdk.base.integration.ManifestParser;
+import com.leontsai.commonsdk.di.component.AppComponent;
+import com.leontsai.commonsdk.di.component.DaggerAppComponent;
+import com.leontsai.commonsdk.utils.Preconditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,7 @@ import java.util.List;
 
 public class AppDelegate implements IApp, AppLifecycle {
     private Application mApplication;
+    private AppComponent mAppComponent;
     private List<ConfigModule> mModules;
     private List<AppLifecycle> mAppLifecycles = new ArrayList<>();
 
@@ -39,6 +43,13 @@ public class AppDelegate implements IApp, AppLifecycle {
     @Override
     public void onCreate(@NonNull Application application) {
         this.mApplication = application;
+        mAppComponent = DaggerAppComponent
+                .builder()
+                .application(application)
+                .build();
+
+        mAppComponent.inject(this);
+
         //执行框架外部, 开发者扩展的 App onCreate 逻辑
         for (AppLifecycle lifecycle : mAppLifecycles) {
             lifecycle.onCreate(mApplication);
@@ -57,5 +68,14 @@ public class AppDelegate implements IApp, AppLifecycle {
         this.mApplication = null;
     }
 
+    @NonNull
+    @Override
+    public AppComponent getAppComponent() {
+        Preconditions.checkNotNull(mAppComponent,
+                "%s == null, first call %s#onCreate(Application) in %s#onCreate()",
+                AppComponent.class.getName(), getClass().getName(), mApplication == null
+                        ? Application.class.getName() : mApplication.getClass().getName());
+        return mAppComponent;
+    }
 }
 

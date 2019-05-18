@@ -2,6 +2,8 @@ package com.leontsai.commonsdk.base;
 
 import androidx.annotation.NonNull;
 
+import com.leontsai.commonsdk.di.component.AppComponent;
+
 
 /**
  * ================================================
@@ -11,6 +13,6 @@ import androidx.annotation.NonNull;
  */
 public interface IApp {
 
-//    @NonNull
-//    AppComponent getAppComponent();
+    @NonNull
+    AppComponent getAppComponent();
 }
