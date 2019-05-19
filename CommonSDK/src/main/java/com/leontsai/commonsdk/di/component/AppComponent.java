@@ -11,6 +11,7 @@ import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
+import okhttp3.OkHttpClient;
 
 @Singleton
 @Component(modules = {AppModule.class, ClientModule.class})
@@ -20,6 +21,8 @@ public interface AppComponent {
     Application getApplication();
 
     Gson getGson();
+
+    OkHttpClient getOkHttpClient();
 
 
     @Component.Builder
