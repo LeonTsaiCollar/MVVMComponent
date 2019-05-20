@@ -1,13 +1,12 @@
-package com.leontsai.commonsdk.base;
+package com.leontsai.commonsdk.core.base;
 
 import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.multidex.MultiDexApplication;
+import com.leontsai.commonsdk.core.base.delegate.AppDelegate;
+import com.leontsai.commonsdk.core.base.delegate.AppLifecycle;
 
-import com.leontsai.commonsdk.base.delegate.AppDelegate;
-import com.leontsai.commonsdk.base.delegate.AppLifecycle;
-import com.leontsai.commonsdk.di.component.AppComponent;
+import com.leontsai.commonsdk.core.di.component.AppComponent;
 import com.leontsai.commonsdk.utils.Preconditions;
 
 

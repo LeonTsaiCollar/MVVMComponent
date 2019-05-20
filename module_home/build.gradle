@@ -11,6 +11,8 @@ android {
 
 dependencies {
     implementation project(path: ':CommonRes')
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
 }
 
 

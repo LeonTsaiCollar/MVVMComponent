@@ -1,4 +1,4 @@
-package com.leontsai.commonsdk.di.module;
+package com.leontsai.commonsdk.core.di.module;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;

@@ -1,17 +1,16 @@
-package com.leontsai.commonsdk.di.component;
+package com.leontsai.commonsdk.core.di.component;
 
 import android.app.Application;
-
 import com.google.gson.Gson;
-import com.leontsai.commonsdk.base.delegate.AppDelegate;
-import com.leontsai.commonsdk.di.module.AppModule;
-import com.leontsai.commonsdk.di.module.ClientModule;
 
-import javax.inject.Singleton;
-
+import com.leontsai.commonsdk.core.base.delegate.AppDelegate;
+import com.leontsai.commonsdk.core.di.module.AppModule;
+import com.leontsai.commonsdk.core.di.module.ClientModule;
 import dagger.BindsInstance;
 import dagger.Component;
 import okhttp3.OkHttpClient;
+
+import javax.inject.Singleton;
 
 @Singleton
 @Component(modules = {AppModule.class, ClientModule.class})

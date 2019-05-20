@@ -2,9 +2,8 @@
 package com.leontsai.start.app;
 
 import android.content.Context;
-
-import com.leontsai.commonsdk.base.delegate.AppLifecycle;
-import com.leontsai.commonsdk.base.integration.ConfigModule;
+import com.leontsai.commonsdk.core.base.delegate.AppLifecycle;
+import com.leontsai.commonsdk.core.base.integration.ConfigModule;
 
 
 import java.util.List;

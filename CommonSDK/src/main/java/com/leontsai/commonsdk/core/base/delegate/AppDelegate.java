@@ -1,18 +1,17 @@
 
-package com.leontsai.commonsdk.base.delegate;
+package com.leontsai.commonsdk.core.base.delegate;
 
 
 import android.app.Application;
 import android.content.Context;
-
 import androidx.annotation.NonNull;
-
-
-import com.leontsai.commonsdk.base.IApp;
-import com.leontsai.commonsdk.base.integration.ConfigModule;
-import com.leontsai.commonsdk.base.integration.ManifestParser;
-import com.leontsai.commonsdk.di.component.AppComponent;
-import com.leontsai.commonsdk.di.component.DaggerAppComponent;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.leontsai.commonsdk.BuildConfig;
+import com.leontsai.commonsdk.core.base.IApp;
+import com.leontsai.commonsdk.core.base.integration.ConfigModule;
+import com.leontsai.commonsdk.core.base.integration.ManifestParser;
+import com.leontsai.commonsdk.core.di.component.AppComponent;
+import com.leontsai.commonsdk.core.di.component.DaggerAppComponent;
 import com.leontsai.commonsdk.utils.Preconditions;
 
 import java.util.ArrayList;
@@ -49,7 +48,11 @@ public class AppDelegate implements IApp, AppLifecycle {
                 .build();
 
         mAppComponent.inject(this);
-
+        if (BuildConfig.DEBUG){
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(application);
         //执行框架外部, 开发者扩展的 App onCreate 逻辑
         for (AppLifecycle lifecycle : mAppLifecycles) {
             lifecycle.onCreate(mApplication);

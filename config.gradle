@@ -30,6 +30,8 @@ ext {
             "dagger-compiler":"com.google.dagger:dagger-compiler:2.22",
             "gson":"com.google.code.gson:gson:2.8.5",
             "multidex":"androidx.multidex:multidex:2.0.0",
+            "arouter-api":"com.alibaba:arouter-api:1.5.0",
+            "arouter-compiler":"com.alibaba:arouter-compiler:1.2.2",
 
             //net
             "okhttp":"com.squareup.okhttp3:okhttp:3.14.1",

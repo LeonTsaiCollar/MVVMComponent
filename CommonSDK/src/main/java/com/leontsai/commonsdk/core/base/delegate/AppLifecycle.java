@@ -1,8 +1,7 @@
-package com.leontsai.commonsdk.base.delegate;
+package com.leontsai.commonsdk.core.base.delegate;
 
 import android.app.Application;
 import android.content.Context;
-
 import androidx.annotation.NonNull;
 
 public interface AppLifecycle {

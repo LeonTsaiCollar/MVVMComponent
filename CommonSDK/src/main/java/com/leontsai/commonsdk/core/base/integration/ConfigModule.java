@@ -1,8 +1,7 @@
-package com.leontsai.commonsdk.base.integration;
+package com.leontsai.commonsdk.core.base.integration;
 
 import android.content.Context;
-
-import com.leontsai.commonsdk.base.delegate.AppLifecycle;
+import com.leontsai.commonsdk.core.base.delegate.AppLifecycle;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import com.leontsai.commonsdk.base.delegate.AppLifecycle;
+import com.leontsai.commonsdk.core.base.delegate.AppLifecycle;
 import com.leontsai.commonsdk.utils.LogUtil;
 
 public class AppLifecycleImpl implements AppLifecycle {

@@ -1,8 +1,7 @@
-package com.leontsai.commonsdk.base;
+package com.leontsai.commonsdk.core.base;
 
 import androidx.annotation.NonNull;
-
-import com.leontsai.commonsdk.di.component.AppComponent;
+import com.leontsai.commonsdk.core.di.component.AppComponent;
 
 
 /**

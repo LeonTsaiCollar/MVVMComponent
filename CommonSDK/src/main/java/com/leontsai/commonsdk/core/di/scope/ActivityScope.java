@@ -1,9 +1,8 @@
-package com.leontsai.commonsdk.di.scope;
-
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
+package com.leontsai.commonsdk.core.di.scope;
 
 import javax.inject.Scope;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 

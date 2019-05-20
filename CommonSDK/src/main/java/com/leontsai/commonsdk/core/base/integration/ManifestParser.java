@@ -1,4 +1,4 @@
-package com.leontsai.commonsdk.base.integration;
+package com.leontsai.commonsdk.core.base.integration;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

@@ -11,4 +11,7 @@ dependencies {
     api rootProject.ext.dependencies["okhttp"]
     implementation rootProject.ext.dependencies["okgo"]
 
+    api rootProject.ext.dependencies["arouter-api"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
 }
