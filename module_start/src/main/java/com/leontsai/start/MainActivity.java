@@ -14,6 +14,10 @@ import com.leontsai.commonsdk.core.hub.RouterHub;
 import com.leontsai.commonsdk.utils.LogUtil;
 
 import com.leontsai.start.di.DaggerStartComponent;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cache.CacheMode;
+import com.lzy.okgo.callback.AbsCallback;
+import com.lzy.okgo.model.Response;
 import okhttp3.*;
 
 import javax.inject.Inject;
@@ -23,8 +27,6 @@ import java.io.IOException;
 @Route(path = RouterHub.START_MAINACTIVITY)
 public class MainActivity extends AppCompatActivity {
 
-    @Inject
-    OkHttpClient okHttpClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +38,23 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.startApp).setOnClickListener(
                 v -> {
-//                    Request request = new Request.Builder()
-//                            .url("https://restapi.amap.com/v3/weather/weatherInfo?key=ca3b0886701109bca675f5ba72fb29f0&city=330109").build();
-//
-//                    okHttpClient.newCall(request).enqueue(new Callback() {
-//                        @Override
-//                        public void onFailure(Call call, IOException e) {
-//                            Log.d("cyl", e.getMessage());
-//                        }
-//
-//                        @Override
-//                        public void onResponse(Call call, Response response) throws IOException {
-//                            String s = new String(response.body().bytes());
-//                            Log.d("cyl", s);
-//                        }
-//                    });
-                    ARouter.getInstance().build(RouterHub.HOME_MAINACTIVITY).navigation();
+
+                    OkGo.get("https://restapi.amap.com/v3/weather/weatherInfo?key=ca3b0886701109bca675f5ba72fb29f0&city=330109")//
+                            .tag(this)//
+                            .cacheMode(CacheMode.NO_CACHE)//
+                            .cacheKey("no_cache")   //对于无缓存模式,该参数无效
+                            .cacheTime(5000)        //对于无缓存模式,该时间无效
+                            .execute(new AbsCallback<Object>() {
+                                @Override
+                                public void onSuccess(Response<Object> response) {
+
+                                }
+
+                                @Override
+                                public Object convertResponse(okhttp3.Response response) throws Throwable {
+                                    return null;
+                                }
+                            });
 
                 }
         );
