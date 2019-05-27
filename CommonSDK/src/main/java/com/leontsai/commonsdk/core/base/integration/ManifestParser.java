@@ -23,12 +23,9 @@ public final class ManifestParser {
                     context.getPackageName(), PackageManager.GET_META_DATA);
             if (appInfo.metaData != null) {
                 for (String key : appInfo.metaData.keySet()) {
-                    if (MODULE_VALUE.equals(key)) {
-                        modules.add(parseModule((String)appInfo.metaData.get(key)));
+                    if (MODULE_VALUE.equals(appInfo.metaData.get(key))) {
+                        modules.add(parseModule(key));
                     }
-//                    if (MODULE_VALUE.equals(appInfo.metaData.get(key))) {
-//                        modules.add(parseModule(key));
-//                    }
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {

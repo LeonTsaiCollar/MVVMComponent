@@ -13,8 +13,8 @@
         <activity android:name=".MainActivity"/>
 
         <meta-data
-                android:name="ConfigModule"
-                android:value="com.leontsai.start.app.ConfigModuleImpl"/>
+                android:name="com.leontsai.start.app.ConfigModuleImpl"
+                android:value="ConfigModule"/>
     </application>
 
 </manifest>

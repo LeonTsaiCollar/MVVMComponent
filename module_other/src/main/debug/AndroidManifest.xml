@@ -18,6 +18,10 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
+
+        <meta-data
+                android:name="com.leontsai.other.app.ConfigModuleImpl"
+                android:value="ConfigModule"/>
     </application>
 
 </manifest>

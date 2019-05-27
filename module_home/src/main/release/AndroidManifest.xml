@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity"/>
-
+        <meta-data
+                android:name="com.leontsai.home.app.ConfigModuleImpl"
+                android:value="ConfigModule"/>
     </application>
 
 </manifest>
